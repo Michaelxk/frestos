@@ -13,7 +13,8 @@ module.exports = {
   extends: ['plugin:vue/essential', 'airbnb-base'],
   // required to lint *.vue files
   plugins: [
-    'vue'
+    'vue',
+    'html'
   ],
   // check if imports actually resolve
   settings: {
@@ -25,6 +26,27 @@ module.exports = {
   },
   // add your custom rules here
   rules: {
+    'comma-dangle': ['error', 'never'],
+    'func-names': ["error", "as-needed"],
+    'no-console': ["error", { allow: ["warn", "error", "info"] }],
+    'no-unused-expressions': ["error", { "allowShortCircuit": true, "allowTernary": true }],
+    'no-underscore-dangle': ["error", { "allow": ["_doc", "_id"] }],
+    'prefer-arrow-callback': ['error', { 'allowNamedFunctions': true }],
+    'arrow-body-style': ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
+    'no-restricted-properties': [2, {"object": "disallowedObjectName", "property": "disallowedPropertyName"}],
+    "prefer-destructuring": ["error", {
+      "array": true,
+      "object": true
+    }],
+    'no-multi-spaces': ["error",
+      {
+        exceptions: {
+          'VariableDeclarator': true,
+          'ImportDeclaration': true,
+          'AssignmentExpression': true
+        }
+      }
+    ],
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
